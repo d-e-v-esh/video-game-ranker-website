@@ -10,7 +10,7 @@ function App() {
     });
 
     // Here we are dispatching loadGames as the website renders on the screen. loadGames contains the dispatch actions which will trigger the gamesReducer that contains our (action.type : "FETCH_GAMES") that returns us the state of popular games.
-
+    //kdjfxhkdfjgh
     return (
         <div className="App">
             <h1>asdfkjh</h1>
