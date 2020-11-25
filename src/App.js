@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { loadGames } from "./actions/gamesAction";
+import { popularGamesURL } from "./api";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(loadGames());
+    });
+
+    // Here we are dispatching loadGames as the website renders on the screen. loadGames contains the dispatch actions which will trigger the gamesReducer that contains our (action.type : "FETCH_GAMES") that returns us the state of popular games.
+
+    return (
+        <div className="App">
+            <h1>asdfkjh</h1>
+        </div>
+    );
 }
+console.log(popularGamesURL());
 
 export default App;
