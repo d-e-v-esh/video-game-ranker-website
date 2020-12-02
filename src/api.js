@@ -3,21 +3,21 @@ const base_url = "https://api.rawg.io/api/";
 
 //Getting the date
 const getCurrentMonth = () => {
-    const month = new Date().getMonth() + 1;
-    if (month < 10) {
-        return `0${month}`;
-    } else {
-        return month;
-    }
+  const month = new Date().getMonth() + 1;
+  if (month < 10) {
+    return `0${month}`;
+  } else {
+    return month;
+  }
 };
 //Getting the date
 const getCurrentDay = () => {
-    const day = new Date().getDate();
-    if (day < 10) {
-        return `0${day}`;
-    } else {
-        return day;
-    }
+  const day = new Date().getDate();
+  if (day < 10) {
+    return `0${day}`;
+  } else {
+    return day;
+  }
 };
 
 //Current day/month/year
@@ -40,7 +40,7 @@ export const newGamesURL = () => `${base_url}${newGames}`;
 export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}`;
 //Game ScreenShots
 export const gameScreenshotURL = (game_id) =>
-    `${base_url}games/${game_id}/screenshots`;
+  `${base_url}games/${game_id}/screenshots`;
 //Searched game
 export const searchGameURL = (game_name) =>
-    `${base_url}games?search=${game_name}&page_size=9`;
+  `${base_url}games?search=${game_name}&page_size=9`;

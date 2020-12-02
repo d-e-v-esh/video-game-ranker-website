@@ -1,22 +1,25 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { loadGames } from "./actions/gamesAction";
-import { popularGamesURL } from "./api";
+import React from "react";
+// Components and Pages
+import Home from "./pages/Home";
+import Nav from "./components/Nav";
+// Router
+import { Route } from "react-router-dom";
+// Styles
+import GlobalStyles from "./components/GlobalStyles";
+
+// We will only have one route because we are not loading another page when we click on a game for details
 
 function App() {
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(loadGames());
-    });
-
-    // Here we are dispatching loadGames as the website renders on the screen. loadGames contains the dispatch actions which will trigger the gamesReducer that contains our (action.type : "FETCH_GAMES") that returns us the state of popular games.
-    //kdjfxhkdfjgh
-    return (
-        <div className="App">
-            <h1>asdfkjh</h1>
-        </div>
-    );
+  return (
+    <div className="App">
+      <GlobalStyles />
+      <Nav />
+      {/* Meaning => We are going to show the home component in both "/game/:id" and "/" cases. We never want to load up a new page. */}
+      <Route path={["/game/:id", "/"]}>
+        <Home />
+      </Route>
+    </div>
+  );
 }
-console.log(popularGamesURL());
 
 export default App;
